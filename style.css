@@ -160,8 +160,12 @@ footer a:hover {
      Booth Packages
 ========================*/
 .booth-package-container > h1 {
-    margin-left:1em;
+    margin-left:1rem;
 }
+.booth-package-container > .description {
+    margin: 0em 0 1em 1rem;
+}
+
 
 .price-table {
     margin:0 auto;
