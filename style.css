@@ -152,8 +152,15 @@ footer a:hover {
 /*======================
      Booth Packages
 ========================*/
+.price-table {
+    margin:0 auto;
+    border-spacing: 0.75em;
+}
+.price-table tr:first-child {
+    text-align: right;
+}
 .pricing p {
-    margin:0.25em 0;
+    margin:0;
     
 }
 .pricing .future, .pricing .past {
@@ -165,7 +172,7 @@ footer a:hover {
     
 }
 .pricing .current {
-    font-weight: 500;
+    font-weight: 700;
     color: var(--color-secondary);
 }
 
@@ -173,12 +180,26 @@ footer a:hover {
 .packages-list {
     display:flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .package {
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 275px;
+    max-width: 275px;
     border-radius: 10px;
     box-shadow: 1px 1px 5px 2px #9995;
-    padding:0.5em 1em;
+    padding:1em 1.3em;
+    margin:1em;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.package h2 {
+    margin-top:0.5em;
+    text-align: center;
+}
+.package h3 {
+    margin:0.5em 0;
 }

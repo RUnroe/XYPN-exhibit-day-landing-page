@@ -10,7 +10,11 @@ const createPriceTableRow = price => {
     let row = document.createElement("tr");
     //Set text of price
     let priceDisplay = document.createElement("p");
-    priceDisplay.innerHTML = "$" + price.price;
+    //Format price (2500 => $2,500.00)
+    priceDisplay.innerHTML = price.price.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      });;
     //Put paragraph in table data
     let tableData = document.createElement("td");
     tableData.appendChild(priceDisplay);
@@ -58,17 +62,21 @@ const createBoothPackages = () => {
         //Create package title
         let title = document.createElement("h2");
         title.innerHTML = package.packageName;
-        container.appendChild(title);
 
         //Create package description
         let description = document.createElement("p");
         description.innerHTML = package.packageDescription;
-        container.appendChild(description);
+
+        //Create information container
+        let informationContainer = document.createElement("div");
+        informationContainer.appendChild(title);
+        informationContainer.appendChild(description);
+        container.appendChild(informationContainer);
+
 
         //Create package pricing title
         let pricingTitle = document.createElement("h3");
         pricingTitle.innerHTML = "Pricing:";
-        container.appendChild(pricingTitle);
 
         //Create package price table
         let priceTable = document.createElement("table");
@@ -83,8 +91,15 @@ const createBoothPackages = () => {
             tableBody.appendChild(createPriceTableRow(price));
         });
 
+        //Create price container
+        let priceContainer = document.createElement("div");
+
+        priceContainer.appendChild(pricingTitle);
         priceTable.appendChild(tableBody);
-        container.appendChild(priceTable);
+        priceContainer.appendChild(priceTable);
+
+        container.appendChild(priceContainer);
+
 
         //append package display to screen
         document.getElementsByClassName("packages-list")[0].appendChild(container);
