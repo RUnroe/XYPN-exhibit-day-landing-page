@@ -1,0 +1,106 @@
+:root {
+    --color-primary: #193f6f;
+    --color-secondary: #51a749;
+    --color-light: #fafafa;
+    --color-text-secondary: #aaa;
+    --color-dark: #282828;
+}
+
+html, body {
+    margin:0;
+    padding:0;
+    
+}
+
+body {
+    background-color: var(--color-light);
+    font-family: 'Roboto', sans-serif;
+    display:grid;
+    height:100%;
+    min-height: 100vh;
+    grid-template-rows:auto 1fr 4em;
+}
+
+/* Title Font */
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Header */
+header {
+    position:sticky;
+    top:0;
+}
+/*======================
+        Nav Bar
+========================*/
+nav {
+    background-color: var(--color-light);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0px 5px 2px #9995;
+}
+nav > .logo {
+    height:3.5em;
+    margin:0.25em;
+}
+nav > .logo > a > img {
+    height:100%;
+}
+
+nav > .nav-list {
+    display:flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+nav > .nav-list > li {
+    list-style: none;
+}
+nav > .nav-list > li > a {
+    box-sizing: border-box;
+    cursor: pointer;
+    padding:0.5em 0.7em;
+    margin: 0 0.3em;
+    background-color:var(--color-secondary);
+    color: var(--color-dark);
+    text-decoration: none;
+}
+
+/*======================
+        Footer
+========================*/
+footer {
+    background-color: var(--color-dark);
+    color:var(--color-text-secondary);
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height:100%;
+}
+footer > p {
+    margin: 0;
+}
+
+
+/*======================
+      Main Section
+========================*/
+
+
+.title {
+    background: linear-gradient(#193f6faa, #193f6fee),  url("images/reception.jpg");
+    background-size: cover;
+    background-position: center;
+    height:18em;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-light);
+}
+.title > h1 {
+    margin:0;
+}
