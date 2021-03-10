@@ -31,6 +31,7 @@ const xypnData = {
     sponsorships: [
         {
             name: "National Sponsorship",
+            style: "",
             description: "National Sponsors support #XYPNLIVE and the Network. Their support helps XYPN provide education, networking, and programs to the community 365 days a year.",
             listTitle: "National sponsorship includes the following",
             listItems: [
@@ -47,6 +48,7 @@ const xypnData = {
         },
         {
             name: "Blue Sponsorships",
+            style: "blue",
             description: "Help shape the #XYPNLIVE experience! Blue Sponsors have the opportunity to host high-visibility conference activities and amenities.",
             listTitle: "Companies can choose to sponsor the following",
             listItems: [
@@ -65,6 +67,7 @@ const xypnData = {
         },
         {
             name: "Green Sponsorships",
+            style: "green",
             description: "Enhance the attendee experience. Green Sponsors have the opportunity to add to the #XYPNLIVE experience through their support of conference content, accessories or amenities. Unless noted, each sponsorship is limited to one company.",
             listTitle: "Companies can choose to sponsor the following",
             listItems: [

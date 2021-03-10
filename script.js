@@ -38,7 +38,7 @@ const createPriceTableRow = price => {
     }
     //Current pricing period (current date is between start and end date)
     else {
-        dateDisplay.innerHTML = "Until " + getFormattedDate(endDate);
+        if(price.endDate) dateDisplay.innerHTML = "Until " + getFormattedDate(endDate);
         row.classList.add("current");
     }
     //Append to table
@@ -114,29 +114,6 @@ const createPriceContainer = data => {
     return priceContainer;
 }
 
-/* <div class="sponsorship">
-    <div>
-        <h2>National Sponsorship</h2>
-        <p>National Sponsors support #XYPNLIVE and the Network. Their support helps XYPN provide education, networking, and programs to the community 365 days a year.</p>
-    </div>
-    <div class="information">
-        <div class="list-container">
-            <h3>National sponsorship includes the following:</h3>
-            <ul>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-            </ul>
-        </div>
-        <div class="price-container">
-            <h3>Pricing:</h3>
-            <table></table>
-        </div>
-    </div>
-</div> */
 
 const createList = listItems => {
     let list = document.createElement("ul");
@@ -151,12 +128,16 @@ const createList = listItems => {
     return list;
 }
 
+// Dynamically create sponsorships display based on data in xypnData object
 const createSponsorships = () => {
     xypnData.sponsorships.forEach( sponsorship => {
         //Create sponsorship container
         let container = document.createElement("div");
         container.classList.add("sponsorship");
 
+        //Add style if present
+        if(sponsorship.style) container.classList.add(sponsorship.style);
+        
         //Create title section
         let titleContainer = document.createElement("div");
         
@@ -181,7 +162,7 @@ const createSponsorships = () => {
         
         //Create list title
         let listTitle = document.createElement("h3");
-        listTitle.innerHTML = sponsorship.listTitle;
+        listTitle.innerHTML = sponsorship.listTitle + ":";
         listContainer.appendChild(listTitle);
 
         //Create list with list items
