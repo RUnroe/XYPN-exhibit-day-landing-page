@@ -31,15 +31,15 @@ const createPriceTableRow = price => {
         dateDisplay.innerHTML = "Until " + getFormattedDate(endDate);
         row.classList.add("past");
     }
-    //Check for the current pricing period (current date is between start and end date)
-    else if(startDate < currentDate && endDate > currentDate) {
-        dateDisplay.innerHTML = "Until " + getFormattedDate(endDate);
-        row.classList.add("current");
-    }
     //Pricing period has not started yet
-    else {
+    else if(startDate > currentDate) {
         dateDisplay.innerHTML = "Starts " + getFormattedDate(startDate);
         row.classList.add("future");
+    }
+    //Current pricing period (current date is between start and end date)
+    else {
+        dateDisplay.innerHTML = "Until " + getFormattedDate(endDate);
+        row.classList.add("current");
     }
     //Append to table
     tableData = document.createElement("td");
@@ -61,11 +61,11 @@ const createBoothPackages = () => {
         
         //Create package title
         let title = document.createElement("h2");
-        title.innerHTML = package.packageName;
+        title.innerHTML = package.name;
 
         //Create package description
         let description = document.createElement("p");
-        description.innerHTML = package.packageDescription;
+        description.innerHTML = package.description;
 
         //Create information container
         let informationContainer = document.createElement("div");

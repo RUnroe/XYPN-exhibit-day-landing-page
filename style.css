@@ -128,12 +128,23 @@ footer a:hover {
       Main Section
 ========================*/
 
-.content, .booth-package-container {
+.content, .booth-package-container, .sponsorship-container {
     max-width: 1100px;
     margin: 0 auto;
     padding:1em;
 }
 
+
+.booth-package-container > h1, .sponsorship-container > h1 {
+    margin-left:1rem;
+}
+.booth-package-container > .description, .sponsorship-container > .description {
+    margin: 0em 0 1em 1rem;
+}
+
+.main h1 {
+    font-size: 2em;
+}
 
 /*======================
         Title
@@ -159,12 +170,7 @@ footer a:hover {
 /*======================
      Booth Packages
 ========================*/
-.booth-package-container > h1 {
-    margin-left:1rem;
-}
-.booth-package-container > .description {
-    margin: 0em 0 1em 1rem;
-}
+
 
 
 .price-table {
@@ -217,4 +223,22 @@ footer a:hover {
 }
 .package h3 {
     margin:0.5em 0;
+}
+
+
+/*======================
+      Sponsorships
+========================*/
+.sponsorship-container {
+}
+
+.sponsorship {
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 2px #9995;
+    margin:1em;
+    padding:1em;
+}
+.sponsorship > .information {
+    display:flex;
+    justify-content: space-between;
 }
