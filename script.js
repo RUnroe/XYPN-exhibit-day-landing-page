@@ -74,29 +74,7 @@ const createBoothPackages = () => {
         container.appendChild(informationContainer);
 
 
-        //Create package pricing title
-        let pricingTitle = document.createElement("h3");
-        pricingTitle.innerHTML = "Pricing:";
-
-        //Create package price table
-        let priceTable = document.createElement("table");
-        priceTable.classList.add("price-table");
-        
-        //Create package price table body
-        let tableBody = document.createElement("tbody");
-        tableBody.classList.add("pricing");
-
-        //Create package price table elements
-        package.pricing.forEach(price => {
-            tableBody.appendChild(createPriceTableRow(price));
-        });
-
-        //Create price container
-        let priceContainer = document.createElement("div");
-
-        priceContainer.appendChild(pricingTitle);
-        priceTable.appendChild(tableBody);
-        priceContainer.appendChild(priceTable);
+        priceContainer = createPriceContainer(package);
 
         container.appendChild(priceContainer);
 
@@ -107,8 +85,125 @@ const createBoothPackages = () => {
 }
 
 
+const createPriceContainer = data => {
+    //Create pricing title
+    let pricingTitle = document.createElement("h3");
+    pricingTitle.innerHTML = "Pricing:";
+
+    //Create price table
+    let priceTable = document.createElement("table");
+    priceTable.classList.add("price-table");
+    
+    //Create price table body
+    let tableBody = document.createElement("tbody");
+    tableBody.classList.add("pricing");
+
+    //Create price table elements
+    data.pricing.forEach(price => {
+        tableBody.appendChild(createPriceTableRow(price));
+    });
+
+    //Create price container
+    let priceContainer = document.createElement("div");
+    priceContainer.classList.add("price-container");
+
+    priceContainer.appendChild(pricingTitle);
+    priceTable.appendChild(tableBody);
+    priceContainer.appendChild(priceTable);
+
+    return priceContainer;
+}
+
+/* <div class="sponsorship">
+    <div>
+        <h2>National Sponsorship</h2>
+        <p>National Sponsors support #XYPNLIVE and the Network. Their support helps XYPN provide education, networking, and programs to the community 365 days a year.</p>
+    </div>
+    <div class="information">
+        <div class="list-container">
+            <h3>National sponsorship includes the following:</h3>
+            <ul>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+            </ul>
+        </div>
+        <div class="price-container">
+            <h3>Pricing:</h3>
+            <table></table>
+        </div>
+    </div>
+</div> */
+
+const createList = listItems => {
+    let list = document.createElement("ul");
+    
+    //Loop through each item in the list
+    listItems.forEach(item => {
+        //Create list item, assign value, append to list
+        let listItem = document.createElement("li");
+        listItem.innerHTML = item;
+        list.appendChild(listItem);
+    });
+    return list;
+}
+
+const createSponsorships = () => {
+    xypnData.sponsorships.forEach( sponsorship => {
+        //Create sponsorship container
+        let container = document.createElement("div");
+        container.classList.add("sponsorship");
+
+        //Create title section
+        let titleContainer = document.createElement("div");
+        
+        //Create title 
+        let title = document.createElement("h2");
+        title.innerHTML = sponsorship.name;
+        titleContainer.appendChild(title);
+
+        //Create description
+        let description = document.createElement("p");
+        description.innerHTML = sponsorship.description;
+        titleContainer.appendChild(description);
+
+
+        //Create information container
+        let informationContainer = document.createElement("div");
+        informationContainer.classList.add("information");
+
+        //Create list container
+        let listContainer = document.createElement("div");
+        listContainer.classList.add("list-container");
+        
+        //Create list title
+        let listTitle = document.createElement("h3");
+        listTitle.innerHTML = sponsorship.listTitle;
+        listContainer.appendChild(listTitle);
+
+        //Create list with list items
+        listContainer.appendChild(createList(sponsorship.listItems));
+        informationContainer.appendChild(listContainer);
+
+        //Create price container
+        priceContainer = createPriceContainer(sponsorship);
+        informationContainer.appendChild(priceContainer);
+        
+        //Append elements to container
+        container.appendChild(titleContainer);
+        container.appendChild(informationContainer);
+
+        //Put container on screen
+
+        document.getElementsByClassName("sponsorships-list")[0].appendChild(container);
+    });
+}
 
 
 
 
 createBoothPackages();
+createSponsorships();
