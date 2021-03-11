@@ -48,8 +48,8 @@ nav {
     box-shadow: 0 0 5px 2px #9995;
 }
 nav > .logo {
-    height:3.5em;
-    margin:0.25em 0.5em;
+    height:3em;
+    margin:0.75em;
 }
 nav > .logo > a > img {
     height:100%;
