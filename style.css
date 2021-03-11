@@ -144,7 +144,9 @@ footer a:hover {
 }
 
 
-
+p .bold {
+    font-weight: bold;
+}
 
 .main h1 {
     font-size: 2em;
