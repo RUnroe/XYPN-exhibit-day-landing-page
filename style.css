@@ -152,6 +152,12 @@ p .bold {
     font-size: 2em;
 }
 
+.main hr {
+    background-color: var(--color-secondary);
+    border:none;
+    height:2.5px;
+}
+
 /*======================
         Title
 ========================*/
