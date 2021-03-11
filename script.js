@@ -212,7 +212,6 @@ const slideshowFoward = slideshow => {
     let newSlide = (parseInt(currentSlideIndex) + 1) % numOfSlides;
     let nextSlide = (newSlide + 1) % numOfSlides;
 
-    console.log(currentSlideIndex, newSlide, nextSlide);
     
     slideshow.children[newSlide].classList.add("active");
     slideshow.children[currentSlideIndex].classList.add("previous");

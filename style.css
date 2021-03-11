@@ -13,7 +13,7 @@
 html, body {
     margin:0;
     padding:0;
-    font-size: 0.95em;   
+    font-size: 0.85em;   
 }
 
 body {
@@ -36,6 +36,7 @@ header {
     position:fixed;
     width:100%;
     top:0;
+    z-index: 10;
 }
 /*======================
         Nav Bar
@@ -47,6 +48,7 @@ nav {
     box-sizing: border-box;
     position: relative;
     height: 100%;
+    z-index: 10;
 }
 nav > .logo {
     height:4.5em;
@@ -239,7 +241,6 @@ article .btn {
 ========================*/
 
 .slideshow img {
-    margin:0.5em;
     background-color: #000;
     display:inline-block;
     width:100%;
@@ -253,6 +254,8 @@ article .btn {
     width:80%;
     box-sizing: border-box;
     height:400px;
+    padding:0;
+    z-index: 1;
 }
 
 
@@ -262,6 +265,8 @@ article .btn {
     width:100%;
     height:100%;
     position: relative;
+    z-index: 1;
+
 }
 
 .slideshow::after {
@@ -273,6 +278,7 @@ article .btn {
 .slideshow-item {
     box-sizing: border-box;
     position: absolute;
+    z-index: 1;
     display:none;
     width:100%;
     height:100%;
@@ -510,5 +516,11 @@ article .btn {
 
     .navbar-toggle {
         display:none;
+    }
+}
+
+@media all and (min-width:550px) {
+    html, body {
+        font-size: 0.95em;   
     }
 }
