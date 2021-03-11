@@ -2,9 +2,11 @@
     --color-primary: #193f6f;
     --color-secondary: #51a749;
     --color-light: #fafafa;
+    --color-dark: #282828;
+
     --color-text-secondary: #777;
     --color-text-footer: #aaa;
-    --color-dark: #282828;
+    --color-text-secondary-on-color: #ddd;
 }
 
 html, body {
@@ -248,12 +250,37 @@ footer a:hover {
     flex-wrap: wrap;
 }
 
+.sponsorship h2 {
+    margin-top:0.5em;
+}
+.sponsorship h3 {
+    margin:0.5em 0;
+}
+/* Colored sponsorship displays */
+
 .sponsorship.blue {
     background-color: var(--color-primary);
-    color:var(--color-light);
+    color: var(--color-text-secondary-on-color);
 }
 
 .sponsorship.green {
     background-color: var(--color-secondary);
-    color:var(--color-light);
+    color: var(--color-text-secondary-on-color);
+}
+
+.blue h3, .blue h2, .green h3, .green h2 {
+    color: var(--color-light);
+}
+
+
+.blue .pricing .future, .blue .pricing .past{
+    color: var(--color-text-secondary-on-color);
+}
+
+.green .pricing .future, .green .pricing .past {
+    color: var(--color-text-secondary-on-color);
+}
+
+.green .pricing .current {
+    color: var(--color-light);
 }
