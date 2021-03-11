@@ -42,24 +42,30 @@ header {
 ========================*/
 nav {
     background-color: var(--color-light);
-    display:flex;
-    justify-content: space-between;
     align-items: center;
     box-shadow: 0 0 5px 2px #9995;
+    padding: 0 0.5em;
+    margin:0;
+    box-sizing: border-box;
+    position: relative;
+    height: 100%;
 }
 nav > .logo {
-    height:3em;
-    margin:0.75em;
+    height:4.5em;
+    padding:0.75em;
+    box-sizing: border-box;
 }
+
 nav > .logo > a > img {
     height:100%;
 }
 
 nav > .nav-list {
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     box-sizing: border-box;
     height:100%;
+    list-style: none;
 }
 nav > .nav-list > li {
     list-style: none;
@@ -67,8 +73,8 @@ nav > .nav-list > li {
 .nav-link {
     box-sizing: border-box;
     cursor: pointer;
-    padding: 1em 1.1em;
-    margin: 0 0.2em;
+    padding: 1em 0.75em;
+    margin: 0 0.1em;
     color: var(--color-dark);
     text-decoration: none;
     border-bottom: 3.5px solid var(--color-light); 
@@ -81,6 +87,25 @@ nav > .nav-list > li {
 .nav-link.btn-secondary {
     border:0;
     margin:0 0.5em;
+}
+
+.navbar-toggle {
+    cursor:pointer;
+    position:absolute;
+    right:1em;
+    top:1em;
+}
+.hamburger-icon {
+    width:2em;
+    height: 1.4em;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.hamburger-icon > div {
+    height:3px;
+    background-color: var(--color-dark);
+    border-radius: 2px;
 }
 
 /*======================
@@ -151,6 +176,7 @@ footer a:hover {
 
 p .bold {
     font-weight: bold;
+    color:var(--color-primary)
 }
 
 .main h1 {
@@ -163,6 +189,7 @@ p .bold {
     height:2.5px;
     max-width: 1100px;
     margin: 0 auto;
+    width: 95%;
 }
 
 .main > article, .main > div {
@@ -366,4 +393,45 @@ article .btn {
     padding:0 5em;
     box-sizing: border-box;
     align-items: center;
+}
+
+
+
+/*======================
+       Responsive
+========================*/
+
+@media all and (min-width:800px) {
+    .nav-link {
+        padding: 1em 1.1em;
+        margin: 0 0.2em;
+    }
+}
+
+@media all and (min-width:750px) {
+    nav {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    nav > .nav-list {
+        display:flex;
+        flex-direction: row;
+        height:100%;
+    }
+    .nav-link {
+        padding: 1em 0.75em;
+        margin: 0 0.1em;
+        text-decoration: none;
+        border-bottom: 3.5px solid var(--color-light); 
+        transition: border-color 0.1s ease;
+    }
+    .nav-link:hover {
+       border-color:var(--color-secondary);
+    }
+    
+    .nav-link.btn-secondary {
+        border:0;
+        margin:0 0.5em;
+    }
 }
