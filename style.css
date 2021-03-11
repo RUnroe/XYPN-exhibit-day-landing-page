@@ -253,9 +253,11 @@ article .btn {
     overflow:hidden;
     width:80%;
     box-sizing: border-box;
-    height:400px;
+    height:45vw;
     padding:0;
     z-index: 1;
+    max-width: 900px;
+    max-height: 500px;
 }
 
 
