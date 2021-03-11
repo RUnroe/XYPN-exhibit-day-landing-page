@@ -116,6 +116,7 @@ footer a:hover {
     border-radius: 5px;
     cursor:pointer;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 .btn-secondary {
@@ -143,6 +144,10 @@ footer a:hover {
     padding:1em 1.75em;
 }
 
+.content > p {
+    margin:1em 1.5em;
+    font-size: 1rem;
+}
 
 p .bold {
     font-weight: bold;
@@ -156,13 +161,25 @@ p .bold {
     background-color: var(--color-secondary);
     border:none;
     height:2.5px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.main > article, .main > div {
+    box-sizing: border-box;
+}
+article .btn {
+    text-align: center;
+    display:block;
+    margin:1.3em auto;
+    width: 10em;
 }
 
 /*======================
         Title
 ========================*/
 .title {
-    background: linear-gradient(#193f6faa, #193f6fee),  url("images/reception.jpg");
+    background: linear-gradient(#193f6fbb, #193f6fee),  url("images/reception.jpg");
     background-size: cover;
     background-position: center;
     height:25em;
