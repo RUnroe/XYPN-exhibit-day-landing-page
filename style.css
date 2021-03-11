@@ -305,6 +305,7 @@ footer a:hover {
     padding:1em 0;
     display:flex;
     justify-content: center;
+    margin:1em 0;
 }
 .question-section > div {
     display:inline-flex;
@@ -326,6 +327,13 @@ footer a:hover {
     color: var(--color-text-secondary-on-color);
     padding:1em 0;
 }
-.join-section > h1 {
+.join-section h1 {
     color: var(--color-light);
+}
+.join-section > .content {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin:0 8em;
+    align-items: center;
 }
