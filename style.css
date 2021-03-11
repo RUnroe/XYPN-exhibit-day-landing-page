@@ -1,6 +1,7 @@
 :root {
     --color-primary: #193f6f;
-    --color-secondary: #51a749;
+    /* --color-secondary: #51a749; */
+    --color-secondary: #3e8637;
     --color-light: #fafafa;
     --color-dark: #282828;
 
@@ -114,6 +115,7 @@ footer a:hover {
     padding:0.75em 1.2em;
     border-radius: 5px;
     cursor:pointer;
+    text-decoration: none;
 }
 
 .btn-secondary {
@@ -123,7 +125,7 @@ footer a:hover {
 }
 
 .btn-secondary:hover {
-    background-color:#37962f;
+    background-color:#51a749;
 }
 
 
@@ -256,6 +258,15 @@ footer a:hover {
 .sponsorship h3 {
     margin:0.5em 0;
 }
+
+.sponsorship .pricing-title {
+    text-align: center;
+}
+
+.sponsorship .price-container {
+    min-width: 200px;
+}
+
 /* Colored sponsorship displays */
 
 .sponsorship.blue {
@@ -281,7 +292,7 @@ footer a:hover {
     color: var(--color-text-secondary-on-color);
 }
 
-.green .pricing .current {
+.green .pricing .current, .blue .pricing .current {
     color: var(--color-light);
 }
 
@@ -292,12 +303,19 @@ footer a:hover {
 ========================*/
 .question-section {
     padding:1em 0;
-}
-.question-section > .content {
     display:flex;
+    justify-content: center;
 }
-.question-section > .content > img {
+.question-section > div {
+    display:inline-flex;
+    padding:1em
+}
+.question-section > div > img {
     margin-right: 2em;
+}
+.question-section a {
+    color:var(--color-secondary);
+    text-decoration: none;
 }
 
 /*======================

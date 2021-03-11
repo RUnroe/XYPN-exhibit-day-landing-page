@@ -44,7 +44,7 @@ const createPriceTableRow = price => {
     //Append to table
     tableData = document.createElement("td");
     tableData.appendChild(dateDisplay);
-    row.appendChild(tableData);
+    if(price.endDate) row.appendChild(tableData);
 
     return row;
 }
@@ -74,7 +74,7 @@ const createBoothPackages = () => {
         container.appendChild(informationContainer);
 
 
-        priceContainer = createPriceContainer(package);
+        priceContainer = createPriceContainer(package, true);
 
         container.appendChild(priceContainer);
 
@@ -85,10 +85,14 @@ const createBoothPackages = () => {
 }
 
 
-const createPriceContainer = data => {
+const createPriceContainer = (data, addColon) => {
     //Create pricing title
     let pricingTitle = document.createElement("h3");
-    pricingTitle.innerHTML = "Pricing:";
+    pricingTitle.classList.add("pricing-title");
+    pricingTitle.innerHTML = "Pricing";
+
+    //Add colon to pricing title if parameter is true
+    if(addColon) pricingTitle.innerHTML += ":";
 
     //Create price table
     let priceTable = document.createElement("table");
@@ -137,7 +141,7 @@ const createSponsorships = () => {
 
         //Add style if present
         if(sponsorship.style) container.classList.add(sponsorship.style);
-        
+
         //Create title section
         let titleContainer = document.createElement("div");
         
@@ -170,7 +174,7 @@ const createSponsorships = () => {
         informationContainer.appendChild(listContainer);
 
         //Create price container
-        priceContainer = createPriceContainer(sponsorship);
+        priceContainer = createPriceContainer(sponsorship, false);
         informationContainer.appendChild(priceContainer);
         
         //Append elements to container
