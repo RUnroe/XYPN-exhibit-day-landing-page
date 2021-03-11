@@ -1,3 +1,11 @@
+//Add event listener to nav toggle btn
+document.getElementById("navbar-toggle").addEventListener("click", () => {
+    document.getElementsByClassName("nav-list")[0].classList.toggle("hidden");
+});
+
+
+
+
 
 const getFormattedDate = date => {
     return (date.getMonth() + 1) + "/" +  date.getDate() + "/" +  date.getFullYear();

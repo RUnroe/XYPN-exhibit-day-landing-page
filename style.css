@@ -65,12 +65,21 @@ nav > .nav-list {
     flex-direction: column;
     box-sizing: border-box;
     height:100%;
+    max-height:100%;
     list-style: none;
+    padding-left: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
 }
+.nav-list.hidden {
+    max-height: 0;
+}
+
 nav > .nav-list > li {
     list-style: none;
 }
 .nav-link {
+    display:block;
     box-sizing: border-box;
     cursor: pointer;
     padding: 1em 0.75em;
@@ -104,7 +113,7 @@ nav > .nav-list > li {
 }
 .hamburger-icon > div {
     height:3px;
-    background-color: var(--color-dark);
+    background-color: var(--color-secondary);
     border-radius: 2px;
 }
 
@@ -433,5 +442,8 @@ article .btn {
     .nav-link.btn-secondary {
         border:0;
         margin:0 0.5em;
+    }
+    .nav-list.hidden {
+        max-height: initial;
     }
 }
