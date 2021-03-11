@@ -197,6 +197,56 @@ const createSponsorships = () => {
 
 
 
+//Change the images displayed in the slideshow
+const nextImageSlideshow = () => {
+    for(slideshow of document.getElementsByClassName("slideshow")) {
+        slideshowFoward(slideshow);
+    }
+}
+//Move slideshow foward
+const slideshowFoward = slideshow => {
+    let currentSlideIndex = slideshow.dataset.slideIndex;
+    let numOfSlides = slideshow.children.length;
+
+
+    let newSlide = (parseInt(currentSlideIndex) + 1) % numOfSlides;
+    let nextSlide = (newSlide + 1) % numOfSlides;
+
+    console.log(currentSlideIndex, newSlide, nextSlide);
+    
+    slideshow.children[newSlide].classList.add("active");
+    slideshow.children[currentSlideIndex].classList.add("previous");
+    slideshow.children[newSlide].classList.add("previous");
+
+    
+    setTimeout(() => {
+        
+        slideshow.children[currentSlideIndex].style.transitionDuration = "0s";
+        slideshow.children[newSlide].style.transitionDuration = "0s";
+
+        slideshow.children[currentSlideIndex].classList.remove("previous");
+        slideshow.children[newSlide].classList.remove("previous");
+        
+
+        slideshow.children[currentSlideIndex].classList.remove("active");   
+        slideshow.children[newSlide].classList.add("active");
+
+        slideshow.children[newSlide].classList.remove("next");
+        slideshow.children[nextSlide].classList.add("next");
+
+        setTimeout(()=> {
+            slideshow.children[currentSlideIndex].style.transitionDuration = "";
+            slideshow.children[newSlide].style.transitionDuration = "";
+            slideshow.dataset.slideIndex = newSlide;
+        }, 50);
+    },800);
+}
+
+
+
+
+//Image slide show interval
+setInterval(nextImageSlideshow, 5500);
 
 createBoothPackages();
 createSponsorships();

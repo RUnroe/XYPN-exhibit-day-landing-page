@@ -234,6 +234,64 @@ article .btn {
     font-weight: 400;
 }
 
+/*======================
+        Slideshow
+========================*/
+
+.slideshow img {
+    margin:0.5em;
+    background-color: #000;
+    display:inline-block;
+    width:100%;
+    height:auto;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    position: relative;
+    overflow:hidden;
+    width:80%;
+    box-sizing: border-box;
+    height:400px;
+}
+
+
+
+.slideshow {
+    box-sizing: border-box;
+    width:100%;
+    height:100%;
+    position: relative;
+}
+
+.slideshow::after {
+    display:block;
+    clear:both;
+    content: "";
+}
+
+.slideshow-item {
+    box-sizing: border-box;
+    position: absolute;
+    display:none;
+    width:100%;
+    height:100%;
+    transition-duration: 0.5s;
+}
+
+.slideshow-item.active {
+    display:block;
+}
+.slideshow-item.next {
+    left:100%;
+    display:block;
+}
+.slideshow-item.previous {
+    transform: translateX(-100%);
+}
+
+
+
 
 /*======================
         Pricing
