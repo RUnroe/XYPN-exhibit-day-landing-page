@@ -138,16 +138,11 @@ footer a:hover {
 .content, .booth-package-container, .sponsorship-container {
     max-width: 1100px;
     margin: 0 auto;
-    padding:1em;
+    padding:1em 1.75em;
 }
 
 
-.booth-package-container > h1, .sponsorship-container > h1 {
-    margin-left:1rem;
-}
-.booth-package-container > .description, .sponsorship-container > .description {
-    margin: 0em 0 1em 1rem;
-}
+
 
 .main h1 {
     font-size: 2em;
@@ -168,7 +163,7 @@ footer a:hover {
     text-align: center;
     color: var(--color-light);
 }
-.title > h1 {
+.title h1 {
     margin:0.25em 0;
     font-size: 2em;
 }
@@ -237,11 +232,16 @@ footer a:hover {
 /*======================
       Sponsorships
 ========================*/
+.sponsorships-list {
+    box-sizing: border-box;
+    margin: 1em 0;
+}
+
 
 .sponsorship {
     border-radius: 10px;
     box-shadow: 1px 1px 5px 2px #9995;
-    margin:1em;
+    margin:1.5em;
     padding:1em;
 }
 .sponsorship > .information {
@@ -282,5 +282,32 @@ footer a:hover {
 }
 
 .green .pricing .current {
+    color: var(--color-light);
+}
+
+
+
+/*======================
+    Question Section
+========================*/
+.question-section {
+    padding:1em 0;
+}
+.question-section > .content {
+    display:flex;
+}
+.question-section > .content > img {
+    margin-right: 2em;
+}
+
+/*======================
+      Join Section
+========================*/
+.join-section {
+    background-color: var(--color-primary);
+    color: var(--color-text-secondary-on-color);
+    padding:1em 0;
+}
+.join-section > h1 {
     color: var(--color-light);
 }
